@@ -1,0 +1,3 @@
+# conectar postgresql con django
+
+pip3 install psycopg2-binary
