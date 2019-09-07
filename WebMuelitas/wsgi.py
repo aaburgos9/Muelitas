@@ -1,5 +1,5 @@
 """
-WSGI config for Muelitas project.
+WSGI config for WebMuelitas project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Muelitas.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'WebMuelitas.settings')
 
 application = get_wsgi_application()

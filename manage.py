@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Muelitas.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'WebMuelitas.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
