@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+{% load staticfiles%}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-      <link rel="stylesheet" href="{% static/css/aquamarine.css %}" type="text/css">
+      <link rel="stylesheet" href="{% static /css/estilos.css %}" type="text/css">
     <style media="screen" rel= "stylesheet">
       *{
         margin: 0px;
@@ -16,24 +17,13 @@
         width: 100%;
         height: 50px;
         border-style: none;
-      }
-    </style>
-        *{
-          margin: 0px;
-          padding: 0px;
-        }
-        footer{
-          width: 100%;
-          height: 50px;
-        }
-        imframe{
-          width: 100%;
-          height: 50px;
-          border-style: none;
-        }
+      
 
+    </style>
+   
   </head>
   <body>
+  {% block Navbar %}
     <!-- Navbar -->
 
     <nav class="navbar navbar-expand-md fixed-top bg-secondary">
@@ -62,7 +52,23 @@
 
       </div>
     </nav>
-
+  {% endblock %}
   <br>
+    {% block Footer %}
+  <!--footer-->
+<footer>
+<div class="text-center bg-dark pt-5 text-light">
+
+<form class="bg-dark">
+      <div class="container">
+        <div class="row ">
+          <div class="col-md-12 mt-3 ">
+      <p class="text-center text-light">© Copyright 2018&nbsp; - All rights reserved. </p>
+   </div>
+    </div>
+  </div>
+</form>
+</footer>
+    {% endblock %}
   </body>
 </html>
