@@ -14,7 +14,7 @@ def login(request):
                 # verificar si hay un usuario con ese usuario y contraseña
                 q = Usuario.objects.get(documento = documento, contraseña = password)
                 #en caso afirmativo, creo la variable de sesion
-                request.session['logueado'] =[q.nombre, q.apellido, q.id, q.rol]
-                return HttpResponseRedirect(reverse('citas:secretaria/principal.html', args=()))
+                request.session['logueado'] =[q.nombre, q.apellido, q.documento, q.rol]
+                return HttpResponseRedirect(reverse('Inicio:inicio', args=()))
         except Exception as e:
                 return HttpResponse(e)
