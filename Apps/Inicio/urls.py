@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import CrearCita
+from .views import Principal,login
 
-app_name = 'cita'
+app_name = 'inicio'
 urlpatterns = [
-    path('CrearCita/', CrearCita.as_view(), name='CrearCita'),
+    path('principal/', Principal.as_view(), name='principal'), 
+    path('login/', login, name='login'),
 ]

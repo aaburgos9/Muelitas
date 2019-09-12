@@ -92,7 +92,8 @@
       <div class="modal-content container-mod">
         <div class="col login-sec">
           <h2 class="text-center login-h2">As dental</h2>
-          <form class="login-form" action="{% url 'Apps/Templates/' %}">
+          <form class="login-form" action="{% url 'inicio:login' %}" method="POST">
+              {% csrf_token %}
             <div class="form-group">
               <label>Documento</label>
               <input type="text" class="form-control" name="documento" placeholder="documento identidad">
@@ -101,11 +102,12 @@
               <label for="message-text" class="col-form-label" >contraseña</label>
               <input type="password" class="form-control" name="password" placeholder="password">
             </div>
+          </div>
+          <div class="btn-center">
+            <button type="submit" class="btn btn-lg btn-login btn-responsive">ingresar</button>
+          </div>
           </form>
-        </div>
-        <div class="btn-center">
-          <button type="submit" class="btn btn-lg btn-login btn-responsive ">ingresar</button>
-        </div>
+        
       </div>
     </div>
   </div>

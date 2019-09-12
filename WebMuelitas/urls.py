@@ -20,5 +20,6 @@ from Apps.Inicio.views import Inicio
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Apps.Citas.urls', namespace='cita')),
+     path('', include('Apps.Inicio.urls', namespace='inicio')),
     path('', Inicio.as_view(), name='index'),
 ]
