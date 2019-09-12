@@ -84,154 +84,154 @@
     </header>
   </div>
 
-    <!--modal-->
+  <!--modal-->
 
-    <div class="modal fade login-block" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content container-mod">
-          <div class="col login-sec">
-            <h2 class="text-center login-h2">As dental</h2>
-            <form class="login-form">
-              <div class="form-group">
-                <label>Documento</label>
-                <input type="text" class="form-control" placeholder="documento identidad">
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="col-form-label">contraseña</label>
-                <input type="password" class="form-control" placeholder="password">
-              </div>
-            </form>
+  <div class="modal fade login-block" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content container-mod">
+        <div class="col login-sec">
+          <h2 class="text-center login-h2">As dental</h2>
+          <form class="login-form" action="{% url 'Apps/Templates/' %}">
+            <div class="form-group">
+              <label>Documento</label>
+              <input type="text" class="form-control" name="documento" placeholder="documento identidad">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label" >contraseña</label>
+              <input type="password" class="form-control" name="password" placeholder="password">
+            </div>
+          </form>
+        </div>
+        <div class="btn-center">
+          <button type="submit" class="btn btn-lg btn-login btn-responsive ">ingresar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- carrusel -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <div id="demo" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li>
+          <li data-target="#demo" data-slide-to="4"></li>
+          <li data-target="#demo" data-slide-to="5"></li>
+          <li data-target="#demo" data-slide-to="6"></li>
+          <li data-target="#demo" data-slide-to="7"></li>
+        </ul>
+
+
+
+        <center>
+          <div class="carousel-inner"
+            style=" background-image:  url({% static 'img/odontologia/12222.jpg'%});  background-size: 100%;">
+
+
+            <div class="carousel-item active">
+              <img src="static/img/odontologia/2.jpg" width="1000" height="590">
+            </div>
+            <div class="carousel-item">
+              <img src="static/img/odontologia/3.jpg" width="1000" height="590">
+            </div>
+            <div class="carousel-item">
+              <img src="static/img/odontologia/4.png" width="1000" height="590">
+            </div>
+            <div class="carousel-item">
+              <img src="static/img/odontologia/5.jpg" width="1000" height="590">
+            </div>
+            <div class="carousel-item">
+              <img src="static/img/odontologia/6.jpg" width="1000" height="590">
+            </div>
+            <div class="carousel-item">
+              <img src="static/img/odontologia/7.jpg" width="1000" height="590">
+            </div>
+            <div class="carousel-item">
+              <img src="static/img/odontologia/9.jpg" width="1000" height="590">
+            </div>
           </div>
-          <div class="btn-center">
-            <button type="submit" class="btn btn-lg btn-login btn-responsive ">ingresar</button>
+        </center>
+
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Menu -->
+  <section class="tratamientos py-2 text-xs-center">
+    <div class="py-5 text-center bg-whithe" id="menu">
+      <div class="container bg-whithe">
+        <h1>Tratamientos<br><br><br></h1>
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="vc_single_image-img " src="static/img/odontologia/basicos.png" alt="dental" title="dental"
+              width="150" height="150">
+            <hr />
+            <h2>Tratamientos basicos</h2>
+            <h5 align="justify"> <strong>1.</strong> el control preventivo de placa bacteriana, la aplicación de flúor
+              y
+              sellantes.<br>
+              <strong>2.</strong> El plan de beneficios también cubre procedimientos como calzas, tratamientos de
+              conductos, cirugía oral y maxilofacial.<br>
+              <strong>3.</strong> Para afiliados que coticen con nosotros podemos , garantizar las prótesis dentales.
+            </h5>
+            </hr>
+            <div>
+              <a href="views/servicios/servicios.html" class="btn btn-secondary">ver mas</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <img class="vc_single_image-img " src="static/img/odontologia/blanqueamento.png" alt="dental" title="dental"
+              width="150" height="150">
+            <hr />
+            <h2>blanqueamento dental</h2>
+            <h5 align="justify">El blanqueamiento dental profesional reduce o elimina las manchas y la decoloración
+              dental que nuestros dientes sufren con los años. Con una sola sesión en nuestra clínica dental, se
+              consiguen unas mejoras notables, que pueden mejorarse todavía más siguiendo el blanqueamiento en casa
+              supervisado por tu dentista de Propdental.
+            </h5>
+            </hr>
+            <div>
+              <a href="views/servicios/servicios.html" class="btn btn-secondary">ver mas</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <img class="vc_single_image-img " src="static/img/odontologia/brackets.png" alt="dental" title="dental"
+              width="150" height="150">
+            <hr />
+            <h2>carillas de porcelana</h2>
+            <h5 align="justify">Son unas finas cáscaras de porcelana que imitan la parte frontal del diente y que se
+              pegan a la superficie delantera. As carillas permiten cambiar el color, el tamaño y la forma de los
+              dientes para conseguir una sonrisa más estética y bonita. Dependiendo de su grosor, es necesario o no
+              reducir una parte del esmalte para conseguir una perfecta fijación y un mejor resultado estético.
+            </h5>
+            </hr>
+            <div>
+              <a href="views/servicios/servicios.html" class="btn btn-secondary">ver mas</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-
-
-    <!-- carrusel -->
-    <div class="row mb-5">
-      <div class="col-12">
-        <div id="demo" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-            <li data-target="#demo" data-slide-to="3"></li>
-            <li data-target="#demo" data-slide-to="4"></li>
-            <li data-target="#demo" data-slide-to="5"></li>
-            <li data-target="#demo" data-slide-to="6"></li>
-            <li data-target="#demo" data-slide-to="7"></li>
-          </ul>
-          
-          
-          
-          <center>
-            <div class="carousel-inner"
-            style=" background-image:  url({% static 'img/odontologia/12222.jpg'%});  background-size: 100%;">
-
-          
-              <div class="carousel-item active">
-                <img src="static/img/odontologia/2.jpg" width="1000" height="590">
-              </div>
-              <div class="carousel-item">
-                <img src="static/img/odontologia/3.jpg" width="1000" height="590">
-              </div>
-              <div class="carousel-item">
-                <img src="static/img/odontologia/4.png" width="1000" height="590">
-              </div>
-              <div class="carousel-item">
-                <img src="static/img/odontologia/5.jpg" width="1000" height="590">
-              </div>
-              <div class="carousel-item">
-                <img src="static/img/odontologia/6.jpg" width="1000" height="590">
-              </div>
-              <div class="carousel-item">
-                <img src="static/img/odontologia/7.jpg" width="1000" height="590">
-              </div>
-              <div class="carousel-item">
-                <img src="static/img/odontologia/9.jpg" width="1000" height="590">
-              </div>
-            </div>
-            </center>
-
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </a>
-          </div>
-        </div>
-      </div>  
-
-
-
-    <!-- Menu -->
-    <section class="tratamientos py-2 text-xs-center">
-      <div class="py-5 text-center bg-whithe" id="menu">
-        <div class="container bg-whithe">
-          <h1>Tratamientos<br><br><br></h1>
-          <div class="row">
-            <div class="col-lg-4">
-              <img class="vc_single_image-img " src="static/img/odontologia/basicos.png" alt="dental" title="dental"
-                width="150" height="150">
-              <hr />
-              <h2>Tratamientos basicos</h2>
-              <h5 align="justify"> <strong>1.</strong> el control preventivo de placa bacteriana, la aplicación de flúor
-                y
-                sellantes.<br>
-                <strong>2.</strong> El plan de beneficios también cubre procedimientos como calzas, tratamientos de
-                conductos, cirugía oral y maxilofacial.<br>
-                <strong>3.</strong> Para afiliados que coticen con nosotros podemos , garantizar las prótesis dentales.
-              </h5>
-              </hr>
-              <div>
-                <a href="views/servicios/servicios.html" class="btn btn-secondary">ver mas</a>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <img class="vc_single_image-img " src="static/img/odontologia/blanqueamento.png" alt="dental"
-                title="dental" width="150" height="150">
-              <hr />
-              <h2>blanqueamento dental</h2>
-              <h5 align="justify">El blanqueamiento dental profesional reduce o elimina las manchas y la decoloración
-                dental que nuestros dientes sufren con los años. Con una sola sesión en nuestra clínica dental, se
-                consiguen unas mejoras notables, que pueden mejorarse todavía más siguiendo el blanqueamiento en casa
-                supervisado por tu dentista de Propdental.
-              </h5>
-              </hr>
-              <div>
-                <a href="views/servicios/servicios.html" class="btn btn-secondary">ver mas</a>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <img class="vc_single_image-img " src="static/img/odontologia/brackets.png" alt="dental" title="dental"
-                width="150" height="150">
-              <hr />
-              <h2>carillas de porcelana</h2>
-              <h5 align="justify">Son unas finas cáscaras de porcelana que imitan la parte frontal del diente y que se
-                pegan a la superficie delantera. As carillas permiten cambiar el color, el tamaño y la forma de los
-                dientes para conseguir una sonrisa más estética y bonita. Dependiendo de su grosor, es necesario o no
-                reducir una parte del esmalte para conseguir una perfecta fijación y un mejor resultado estético.
-              </h5>
-              </hr>
-              <div>
-                <a href="views/servicios/servicios.html" class="btn btn-secondary">ver mas</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-  </div>
-  </div>
+    </div>
+    </div>
+    </div>
   </section>
 
 
@@ -338,16 +338,26 @@
               width="200" height="200" style="border:0" allowfullscreen></iframe>
 
           </div>
+
         </div>
-
+        <div class="text-center bg-dark pt-5 text-light">
+          <form class="bg-dark">
+            <div class="container">
+              <div class="row ">
+                <div class="col-md-12 mt-3 ">
+                  <p class="text-center text-light">© Copyright 2018&nbsp; - All rights reserved. </p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
 
-    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/libreria.js' %}"> </script>
-    <script src="{% static 'js/iconFontAwesome.js' %}"> </script>
+      <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+      <script src="{% static 'js/popper.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'js/libreria.js' %}"> </script>
+      <script src="{% static 'js/iconFontAwesome.js' %}"> </script>
 </body>
 
 </html>
