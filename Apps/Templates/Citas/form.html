@@ -1,0 +1,28 @@
+{% extends 'basePrincipal.html' %}
+
+{% block contenedor %}
+<div class="py-5 photo-overlay section-parallax" id="book"> 
+  <div class="container">
+    <div class="row my-5">
+      <div class="col-lg-6 mx-auto p-3 animate-in-down">
+       <form  class=" Citas p-4 bg-light">
+        <h4 class="mb-2 text-center">Regra tu cita</h4>
+         <div class="form-group"> <label>Cedula</label>
+            {{form.Cedula}}
+        <div class="form-group"> <label>Nombre</label>
+           {{form.Nombre}}
+            <div class="form-group"><label>Fecha</label>
+               {{form.FechaCita}}
+          <div class="form-group"> <label>Correo</label>
+            {{form.Correo}}
+           <div class="form-group"><label>Celular</label>
+               {{form.Celular}}
+           </div>
+           <button type="submit" class="btn mt-4 btn-block p-2 btn-primary"><b>Crear cita</b></button>
+         </form>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ {% endblock%}

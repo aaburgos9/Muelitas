@@ -11,3 +11,9 @@ class CrearCita(generic.CreateView):
     form_class = FormCita
     template_name = 'Citas/form.html'
     success_url = reverse_lazy('Citas:listar')
+
+class ListarCitas(generic.ListView):
+    model = Citas
+    template_name = ('Citas/list.html')
+    context_object_name = 'Citas'
+    queryset = Citas.objects.all
