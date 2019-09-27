@@ -1,6 +1,14 @@
+
 <!DOCTYPE html>
-{% load staticfiles%}
-<html>
+
+
+
+<html>  {% load staticfiles%}
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css.map' %}">
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
 
 <head>
   <meta charset="utf-8">
@@ -21,7 +29,7 @@
       <div class="row">
         <div class="col-12">
           <nav class="mb-1 navbar navbar-expand-md fixed-top navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">As dental</a>
+            <a class="navbar-brand" href="{% url 'index'%}">As dental</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
               data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false"
               aria-label="Toggle navigation">
@@ -36,7 +44,7 @@
                   <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                     <a class="dropdown-item" href="#">Mision</a>
                     <a class="dropdown-item" href="#">Vision</a>
-                    <a class="dropdown-item" href="#">Quienes somos</a>
+                    <a class="dropdown-item" href="{% url 'inicio:nosotros'%}">Quienes somos</a>
                   </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -44,9 +52,9 @@
                     aria-haspopup="true" aria-expanded="false">Servicios
                   </a>
                   <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                    <a class="dropdown-item" href="#">Ortodoncia</a>
+                    <a class="dropdown-item" href="{% url 'inicio:Servicios'%}">Ortodoncia</a>
                     <a class="dropdown-item" href="#"></a>
-                    <a class="dropdown-item" href="#">Limpieza</a>
+                    <a class="dropdown-item" href="{% url 'inicio:Servicios'%}">Limpieza</a>
                   </div>
                 </li>
                 <li class="nav-item active">
@@ -112,7 +120,7 @@
     </div>
   </div>
 
-
+{% block contenedor %}
 
   <!-- carrusel -->
   <div class="row mb-5">
@@ -355,11 +363,12 @@
         </div>
       </div>
 
+
+</body>
+{% endblock %}
       <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
       <script src="{% static 'js/popper.min.js' %}"></script>
       <script src="{% static 'js/bootstrap.min.js' %}"></script>
       <script src="{% static 'js/libreria.js' %}"> </script>
       <script src="{% static 'js/iconFontAwesome.js' %}"> </script>
-</body>
-
 </html>

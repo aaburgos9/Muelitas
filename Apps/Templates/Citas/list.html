@@ -1,10 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>lista</title>
-</head>
-<body>
 
-</body>
-</html>
+{% block content %}
+<div class="container">
+    <h1>Lista de Citas</h1>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Fecha</th>
+                <th>Accion</th>
+            </tr>
+            </thead>
+            {% if Citas %}
+            {% for Agenda in Citas %}
+            <tbody>
+            <tr>
+                <td>{{ Agenda.Cedula }}</td>
+                <td>{{ Agenda.Nombre }}</td>
+                <td>{{ Agenda.FechaCita }}</td>
+                <td>
+                    <a class="btn btn-warning" href="#">Mostrar</a>
+                    <a class="btn btn-primary" href="#">Editar</a>
+                    <a class="btn btn-danger" href="#">Eliminar</a>
+                </td>
+            </tr>
+            </tbody>
+            {% endfor %}
+            {% else %}
+            <tbody>
+            <tr>
+                <td colspan="6"><h1>No existen productos registrados....</h1></td>
+            </tr>
+            </tbody>
+            {%endif%}
+        </table>
+    </div>
+</div>
+{% endblock %}

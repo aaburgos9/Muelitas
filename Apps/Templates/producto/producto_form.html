@@ -1,0 +1,34 @@
+{% extends 'basePrincipal.html' %}
+
+{% block content %}
+  <div class="modal fade login-block" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">    <fieldset>
+        <legend>Registro de producto</legend>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Nombre:</label>
+                <div class="col-sm-2">
+                    {{ form.Nombre }}
+                </div>
+                <label class="col-sm-1 col-form-label">Precio</label>
+                <div class="col-sm-3">
+                    {{ form.Precio }}
+                </div>
+
+                <label class="col-sm-1 col-form-label">Cantidad:</label>
+                <div class="col-sm-3">
+                    {{ form.Cantidad }}
+                </div>
+                <label class="col-sm-1 col-form-label">Proveedor</label>
+                <div class="col-sm-3">
+                    {{ form.Proveedor }}
+                </div>
+            </div>
+                 <div class="col-sm-2">
+                     <button type="submit" class="btn btn-success">Guardar</button>
+                </div>
+         </form>
+    </fieldset>
+</div>
+{% endblock %}
+

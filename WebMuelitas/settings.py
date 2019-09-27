@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Apps.Citas',
     'Apps.Inicio',
+    'Apps.Insumos',
 ]
 
 MIDDLEWARE = [
