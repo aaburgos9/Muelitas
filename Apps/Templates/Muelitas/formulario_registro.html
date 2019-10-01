@@ -36,12 +36,15 @@
             <div class="col-md-12 btn-center">
                 <button type="submit" class="btn btn-lg btn-login">registrar</button>
             </div>
+            {% if 'duplicate' in msn %}
+            el usuario ya existe
+            {% endif %}
 
             </form>
 
         </div>
     </div>
-</section
+</section>
 
 
 {% endblock %}

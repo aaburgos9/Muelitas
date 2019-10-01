@@ -14,13 +14,11 @@ from django.views.generic.edit import FormView
 class Muelitas(generic.TemplateView):
         template_name = 'index.html'
 
-
 class Nosotros(generic.TemplateView):
     template_name = 'inicio/nosotros.html'
 
 class Servicios(generic.TemplateView):
     template_name = 'inicio/servicio.html'
-
 
 # Create your views here.
 def index(request,msn):
@@ -36,33 +34,30 @@ def formularioLogin(request):
 
 
 def login(request):
-                try:
-                        documento= request.POST['documento']
-                        password = request.POST['password']
-                        # verificar si hay un usuario con ese usuario y contraseña
-                        q = Usuario.objects.get(Documento = documento, Password = password)
-                        #en caso afirmativo, creo la variable de sesion
-                        request.session['logueado'] =[q.Documento, q.Password]
-                        return HttpResponseRedirect(reverse('Muelitas:principal', args=()))
-                except Exception as e:
-                        return HttpResponse(e)
+        try:
+                documento= request.POST['documento']
+                password = request.POST['password']
+                # verificar si hay un usuario con ese usuario y contraseña
+                q = Usuario.objects.get(Documento = documento, Password = password)
+                #en caso afirmativo, creo la variable de sesion
+                request.session['logueado'] =[q.Documento, q.Password]
+                return HttpResponseRedirect(reverse('Muelitas:principal', args=()))
+        except Exception as e:
+                return HttpResponse(e)
                         
 def logout(request):
+        
         try:
-            del request.session['logueado']
-            return usuarioGuardar(reverse('Muelitas:inicio', args=()))
+                
+                 
+                return HttpResponseRedirect(reverse('Muelitas/index.html', arg=()))
         except Exception as e:
-            return HttpResponse(e)
+                return HttpResponse(e)
 
-
-
-
-def formularioRegistro(request):
-        ses = request.session.get('logueado')
-        if ses == request.session.get('logueado') :
-                return render(request, 'Muelitas/formulario_registro.html')
-        else:
-                return  HttpResponseRedirect("usted no tiene permiso para registrar usuarios")
+                
+def formularioRegistro(request,msn):
+        contexto =  {'msn':msn}
+        return render(request,'Muelitas/formulario_registro.html',contexto)
 
         
 def usuarioGuardar(request):
@@ -77,11 +72,4 @@ def usuarioGuardar(request):
         
         return HttpResponseRedirect(reverse('Muelitas:principal', args=()))
     except Exception as e:
-        return HttpResponse(e)
-
-
-
-
-
-
-
+       return HttpResponseRedirect(reverse('Muelitas:formularioRegistro', args=(e,)))
