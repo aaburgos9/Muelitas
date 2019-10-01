@@ -44,7 +44,7 @@
                   <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                     <a class="dropdown-item" href="#">Mision</a>
                     <a class="dropdown-item" href="#">Vision</a>
-                    <a class="dropdown-item" href="{% url 'inicio:nosotros'%}">Quienes somos</a>
+                    <a class="dropdown-item" href="{% url 'Muelitas:nosotros'%}">Quienes somos</a>
                   </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -52,9 +52,9 @@
                     aria-haspopup="true" aria-expanded="false">Servicios
                   </a>
                   <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                    <a class="dropdown-item" href="{% url 'inicio:Servicios'%}">Ortodoncia</a>
+                    <a class="dropdown-item" href="{% url 'Muelitas:Servicios'%}">Ortodoncia</a>
                     <a class="dropdown-item" href="#"></a>
-                    <a class="dropdown-item" href="{% url 'inicio:Servicios'%}">Limpieza</a>
+                    <a class="dropdown-item" href="{% url 'Muelitas:Servicios'%}">Limpieza</a>
                   </div>
                 </li>
                 <li class="nav-item active">
@@ -69,20 +69,22 @@
 
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link waves-effect waves-light">
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect waves-light">
 
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link waves-effect waves-light">Registrarse
-                  </a>
-                </li>
-                <li class="nav-item ">
-                  <a class="nav-link waves-effect waves-light">
-                    <i class="fas fa-user" data-toggle="modal" data-target="#modal" onclick="login">login</i>
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link waves-effect waves-light" href="{% url 'Muelitas:formularioRegistro' %}">
+                  registrarse
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link waves-effect waves-light" href="{% url 'Muelitas:formularioLogin' %}">
+                  login
 
-                  </a>
+                </a>
                 </li>
               </ul>
             </div>

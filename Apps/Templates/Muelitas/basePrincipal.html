@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load static%}
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{% static 'Muelitas/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'Muelitas/css/bootstrap.min.css.map' %}">
+  <link rel="stylesheet" href="{% static 'Muelitas/css/estilos.css' %}">
+</head>
+
+<body>
+
+  <!--Navbar -->
+
+  <div class="container-fluid p-0">
+    <header class="fixed-top">
+      <div class="row">
+        <div class="col-12">
+          <nav class="mb-1 navbar navbar-expand-md fixed-top navbar-dark bg-primary">
+            <img src="{% static 'Muelitas/img/logos/tooth-solid.svg'%}" alt="Logo Diente">
+            <a class="navbar-brand" href="#">As dental</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Citas
+                  </a>
+                  <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                    <a class="dropdown-item" href="#">Crear Citas</a>
+                    <a class="dropdown-item" href="#">Registrar asistencia</a>
+                    <a class="dropdown-item" href="#">Generar multas</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">inventarios
+                  </a>
+                  <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                    <a class="dropdown-item" href="#">Registrar insumos</a>
+                    <a class="dropdown-item" href="#">Actulizar insumos</a>
+                  </div>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Proveedor</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item dropdown"> 
+                  <i class="fas fa-user-cog"></i>
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Configuracion
+                  </a>
+                  <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                    <a class="dropdown-item" href="#">Perfil</a>
+
+                    {% if request.session.logueado != True %}
+                    <!--<p>logueado</p>-->
+                    <p><a class="dropdown-item"  href="{% url 'Muelitas:logout' %}">cerrar sesion</a></p>
+                    {% else %}
+                    <p>NO logueado</p>
+                    {% endif %}                  
+                    <a class="dropdown-item" href="#">Ayuda</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+
+
+  {% block contenedor %}
+
+
+  {% endblock%}
+
+
+
+
+  <!--footer-->
+  <footer>
+    <div class="mt-5 text-center bg-dark text-light">
+      <form class="bg-dark">
+        <div class="container">
+          <div class="row ">
+            <div class="col-md-12 mt-3 ">
+              <p class="text-center text-light">© Copyright 2018&nbsp; - All rights reserved. </p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </footer>
+
+  <script src="{% static 'Muelitas/js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'Muelitas/js/popper.min.js' %}"></script>
+  <script src="{% static 'Muelitas/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'Muelitas/js/libreria.js' %}"> </script>
+  <script src="{% static 'Muelitas/js/iconFontAwesome.js' %}"> </script>
+</body>
+
+</html>
