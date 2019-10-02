@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'WebMuelitas.wsgi.application'
 DATABASES = {
     'default': {
 
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Muelitas',
-        'USER': 'andres',
-        'PASSWORD': 'toradora',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'proyecto_muelitas',
+        'USER': 'laura',
+        'PASSWORD': '',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '3306',
     }
 }
 

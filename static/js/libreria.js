@@ -1,3 +1,14 @@
+// Scrolling Effect
+$(window).on("scroll", function() {
+    if($(window).scrollTop()) {
+          $('nav').addClass('black');
+    }
+
+    else {
+          $('nav').removeClass('black');
+    }
+});
+
 $(document).ready(function(){
     $('#documento').on('input', function () { 
         this.value = this.value.replace(/[^0-9]/g,'');
