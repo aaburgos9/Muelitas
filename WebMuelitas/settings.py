@@ -98,7 +98,7 @@ from decouple import config
 
 DATABASES ={
     'default': dj_database_url.config(
-        default=config('Database_url')
+        default=config('DATABASE_URL')
     )
 }
 
