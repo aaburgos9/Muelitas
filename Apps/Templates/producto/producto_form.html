@@ -1,34 +1,30 @@
-{% extends 'basePrincipal.html' %}
+{% extends 'Muelitas/basePrincipal.html' %}
 
-{% block content %}
-  <div class="modal fade login-block" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  aria-hidden="true">    <fieldset>
-        <legend>Registro de producto</legend>
-        <form method="post">
-            {% csrf_token %}
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Nombre:</label>
-                <div class="col-sm-2">
+{% block contenedor %}
+<div class="py-5 photo-overlay section-parallax" id="book">
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-lg-6 mx-auto p-3 animate-in-down">
+            <form action="{% url 'producto:nuevoProducto' %}" class="p-4 bg-light" method="POST">
+                {% csrf_token %}
+                <h4 class="mb-2 text-center">Registrar Producto</h4>
+                <div class="form-group"> <label>Nombre</label>
                     {{ form.Nombre }}
                 </div>
-                <label class="col-sm-1 col-form-label">Precio</label>
-                <div class="col-sm-3">
+                <div class="form-group"> <label>Precio</label>
                     {{ form.Precio }}
                 </div>
-
-                <label class="col-sm-1 col-form-label">Cantidad:</label>
-                <div class="col-sm-3">
-                    {{ form.Cantidad }}
+                <div class="form-group"> <label>Cantidad</label>
+                    {{ form.cantidad }}
                 </div>
-                <label class="col-sm-1 col-form-label">Proveedor</label>
-                <div class="col-sm-3">
+                <div class="form-group"> <label>Proveedor</label>
                     {{ form.Proveedor }}
                 </div>
+                
+                <button type="submit" class="btn mt-4 btn-block p-2 btn-primary">Registrar producto</button>
+            </form>
             </div>
-                 <div class="col-sm-2">
-                     <button type="submit" class="btn btn-success">Guardar</button>
-                </div>
-         </form>
-    </fieldset>
+        </div>
+    </div>
 </div>
 {% endblock %}
-

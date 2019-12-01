@@ -2,4 +2,9 @@
 
 pip3 install psycopg2-binary
 
-pip3 insatll
+pip3 install xhtml2pdf
+
+pip install django-bootstrap-modal-forms
+
+insert into Muelitas_usuario()values(2, 1234, 'johanna', '123', 'l@gmail.com', 1, '1');
+insert into Muelitas_usuario()values(3, 12345, 'johanna', '123', 'l@gmail.com', 1, '2');

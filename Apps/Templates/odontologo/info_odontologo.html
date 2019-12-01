@@ -1,0 +1,61 @@
+{% extends 'Muelitas/basePrincipal.html' %}
+
+{% block contenedor %}
+  {% load static%}
+<br>
+<br>
+<br>
+ <center><h1>Odontologos</h1></center>
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+        <img src="{% static 'img/odontologia/targeta_odontologo1.png'%}" style="width:360px;" alt="stack photo"
+          class=".imgRedonda ">
+      </div>
+
+
+      <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+        <div class="container" style="border-bottom:1px solid black">
+          <h2> lisi leonardo</h2>
+         
+        </div>
+        <hr>
+        <ul class="container details">
+          <li class="li-profile">
+            <p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span> La odontologo  estética o cosmética es un especialista de la odontología que soluciona problemas relacionados con la salud bucal y la armonía estética de la boca en su totalidad.</p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+        <img src="{% static 'img/odontologia/targeta_odontologo2.png'%}" style="width:360px;" alt="stack photo"
+          class=".imgRedonda ">
+      </div>
+
+
+      <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+        <div class="container" style="border-bottom:1px solid black">
+          <h2> Andrew Estrada</h2>
+
+        </div>
+        <hr>
+        <ul class="container details">
+          <li class="li-profile">
+            <p><span class="glyphicon glyphicon-earphone one" style="width:50px;"></span> <p> médico-quirúrgica odontológico que estudia la prevención, diagnóstico y tratamiento de las enfermedades y condiciones que afectan los tejidos que dan soporte a los órganos dentarios (encía, ligamento periodontal, cemento radicular y hueso alveolar)</p></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

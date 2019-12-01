@@ -1,40 +1,50 @@
+{% extends 'Muelitas/basePrincipal.html' %}
 
-{% block content %}
-<div class="container">
+{% block contenedor %}
+
+
+<br> <br> <br>
+<div class="container my-5">
     <h1>Lista de Citas</h1>
     <div class="table-responsive">
         <table class="table">
             <thead>
-            <tr>
-                <th>Cedula</th>
-                <th>Nombre</th>
-                <th>Fecha</th>
-                <th>Accion</th>
-            </tr>
+                <tr>
+                    <th>Cedula</th>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Accion</th>
+                </tr>
             </thead>
             {% if Citas %}
             {% for Agenda in Citas %}
             <tbody>
-            <tr>
-                <td>{{ Agenda.Cedula }}</td>
-                <td>{{ Agenda.Nombre }}</td>
-                <td>{{ Agenda.FechaCita }}</td>
-                <td>
-                    <a class="btn btn-warning" href="#">Mostrar</a>
-                    <a class="btn btn-primary" href="#">Editar</a>
-                    <a class="btn btn-danger" href="#">Eliminar</a>
-                </td>
-            </tr>
+                <tr>
+                    <td>{{ Agenda.Documento }}</td>
+                    <td>{{ Agenda.Nombre }}</td>
+                    <td>{{ Agenda.FechaCita }}</td>
+                    <td>
+                        <a class="btn btn-primary" onclick=" return abrir_modal('{% url 'cita:detalle' Agenda.id %}')" href="#">Ver</a>                       
+                        <a onclick=" return abrir_modal('{% url 'cita:editar' Agenda.id %}')"
+                       class="btn btn-warning" href="#">Editar</a>
+                        <a onclick=" return abrir_modal('{% url 'cita:eliminarCita' Agenda.id %}')" class="btn btn-danger" href="#">Eliminar</a>
+
+                    </td>
+                </tr>
             </tbody>
             {% endfor %}
             {% else %}
             <tbody>
-            <tr>
-                <td colspan="6"><h1>No existen productos registrados....</h1></td>
-            </tr>
+                <tr>
+                    <td colspan="6">
+                        <h1>No existen productos registrados....</h1>
+                    </td>
+                </tr>
             </tbody>
             {%endif%}
         </table>
     </div>
 </div>
+
+
 {% endblock %}

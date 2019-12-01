@@ -15,13 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path , include
-from Apps.Muelitas.views import Muelitas
+from Apps.Citas.views import CrearCita
+from Apps.Citas.views import Citas
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Apps.Citas.urls', namespace='cita')),
     path('', include('Apps.Muelitas.urls', namespace='inicio')),
     path('', include('Apps.Insumos.urls', namespace='insumos')),
+    path('', include('Apps.calendario.urls', namespace='calendario')),
 
-    path('', Muelitas.as_view(), name='index'),
+
+    path('', CrearCita.as_view(), name='index'),
 ]

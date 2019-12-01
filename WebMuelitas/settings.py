@@ -25,7 +25,8 @@ SECRET_KEY = ')=_e(dww7*+h=rhv3t#vxbb7&qrrh^^w^+-u#%a&&l%s^_xmjn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -38,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Apps.Citas',
+    'Apps.calendario',
     'Apps.Insumos',
     'Apps.Muelitas',
+    'bootstrap_modal_forms',
 ]
 
 MIDDLEWARE = [
@@ -80,10 +83,12 @@ DATABASES = {
     'default': {
 
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'proyecto_muelitas',
-        'USER': 'laura',
-        'PASSWORD': '',
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'muelitas',
+        'USER': 'andres',
+        'PASSWORD': 'toradora',
         'HOST': 'localhost',
+        # 'PORT': 5432,
         'PORT': '3306',
     }
 }
@@ -122,6 +127,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'Asdental495@gmail.com'
+EMAIL_HOST_PASSWORD = 'Andresburgos981009'
+EMAIL_PORT = 587
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/

@@ -1,0 +1,52 @@
+{% extends 'Muelitas/basePrincipal.html' %}
+
+{% block contenedor %}
+
+
+<br> <br> <br>
+<div class="container my-5">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Cedula</th>
+                    <th>Nombre</th>
+                     <th>sexo</th>
+                    <th>RH</th>
+                    <th>fechaNacimiento</th>
+                    <th>telefono</th>
+                    <th>motivo de la Consulta</th>
+
+                </tr>
+            </thead>
+            {% if history %}
+            {% for Agenda in history %}
+            <tbody>
+                <tr>
+                    <td>{{ Agenda.Documento }}</td>
+                    <td>{{ Agenda.Nombre }}</td>
+                    <td>{{Agenda.get_sexo_display}}</td>
+                     <td>{{Agenda.get_RH_display}}</td>
+                    <td>{{ Agenda.fechaNacimiento }}</td>
+                    <td>{{ Agenda.telefono }}</td>
+                    <td>{{ Agenda.motivoConsulta }}</td>
+
+
+                </tr>
+            </tbody>
+            {% endfor %}
+            {% else %}
+            <tbody>
+                <tr>
+                    <td colspan="6">
+                        <h1>No existen  Por el momento....</h1>
+                    </td>
+                </tr>
+            </tbody>
+            {%endif%}
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}
