@@ -177,7 +177,7 @@ eventlet==0.20.0
 extras==1.0.0
 fasteners==0.12.0
 fixtures==3.0.0
-Flask==0.12.2
+Flask==1.0
 Flask-BabelEx==0.9.3
 Flask-Compress==1.4.0
 Flask-Gravatar==0.4.2
