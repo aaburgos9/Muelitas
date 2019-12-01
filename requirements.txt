@@ -376,7 +376,7 @@ wcwidth==0.1.7
 webassets==0.12.1
 webencodings==0.5.1
 WebOb==1.7.3
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 whitenoise==4.1.4
 wrapt==1.9.0
 wsaccel==0.6.2
