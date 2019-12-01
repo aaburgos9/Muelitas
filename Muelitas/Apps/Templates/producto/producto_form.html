@@ -1,0 +1,30 @@
+{% extends 'Muelitas/basePrincipal.html' %}
+
+{% block contenedor %}
+<div class="py-5 photo-overlay section-parallax" id="book">
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-lg-6 mx-auto p-3 animate-in-down">
+            <form action="{% url 'producto:nuevoProducto' %}" class="p-4 bg-light" method="POST">
+                {% csrf_token %}
+                <h4 class="mb-2 text-center">Registrar Producto</h4>
+                <div class="form-group"> <label>Nombre</label>
+                    {{ form.Nombre }}
+                </div>
+                <div class="form-group"> <label>Precio</label>
+                    {{ form.Precio }}
+                </div>
+                <div class="form-group"> <label>Cantidad</label>
+                    {{ form.cantidad }}
+                </div>
+                <div class="form-group"> <label>Proveedor</label>
+                    {{ form.Proveedor }}
+                </div>
+                
+                <button type="submit" class="btn mt-4 btn-block p-2 btn-primary">Registrar producto</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

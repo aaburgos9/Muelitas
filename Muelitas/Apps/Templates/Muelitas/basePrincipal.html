@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+{% load static %}
+<html> 
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
+  {% include  'messages.html'%}
+  
+</head>
+
+<body>
+ 
+
+
+<div class="container-fluid p-0">
+    <header class="fixed-top">
+      <div class="row">
+        <div class="col-12">
+          <nav class="mb-1 navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #A0C2FC;">
+            <img src="{% static 'img/logos/tooth-solid.svg'%}" alt="Logo Diente" style="width: 50px" height="50px">
+            <a class="navbar-brand" href="#">As dental</a>         
+            <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+              {% if request.session.logueado.3 != "2" and request.session.logueado.3 != "3" %}
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Citas
+                  </a>
+                  <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                    <a class="dropdown-item" href="{% url 'cita:CrearCita'%}">Crear Citas</a>
+                    <!--<a class="dropdown-item" href="#">Registrar asistencia</a>-->
+                    <a class="dropdown-item" href="{% url 'calendario:calendar'%}">ver citas</a>
+                    <a class="dropdown-item" href="{% url 'cita:CrearMulta'%}">Generar multas</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">inventarios
+                  </a>
+                  <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                    <a class="dropdown-item" href="{% url 'producto:nuevoProducto' %}">Registrar insumos</a>
+                    <a class="dropdown-item" href="#">Actualizar insumos</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">proveedores
+                  </a>
+                  <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                    <a class="dropdown-item" href="#">lista de proveedores</a>
+                    <a class="dropdown-item" href="#">Registrar proveedor</a>
+                    <a class="dropdown-item" href="#">eliminar proveedor</a>
+                    <a class="dropdown-item" href="#">Actualizar proveedor</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">especialistas
+                  </a>
+                  <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                    <a class="dropdown-item" href="#">agenda odontologo</a>
+                      <a class="dropdown-item" href="{% url 'Muelitas:info'%}">informacion odontologo</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">usuarios
+                    </a>
+                    <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                      <a class="dropdown-item" href="{% url 'Muelitas:listarRegistro'%}">ver usuarios</a>
+                      
+                    </div>
+                  </li>
+              </ul>
+              {% elif request.session.logueado.3 == "2" %}
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Citas
+                  </a>
+                  <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                    <a class="dropdown-item" href="{% url 'cita:CrearCita'%}">Crear Citas</a>
+                   <!-- <a class="dropdown-item" href="#">Registrar asistencia</a>-->
+                    <a class="dropdown-item" href="{% url 'cita:CrearMulta'%}">Generar multas</a>
+                    <a class="dropdown-item" href="{% url 'Muelitas:CrearHistorial'%}">Registrar historia</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">especialistas
+                  </a>
+                  <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                   <!-- <a class="dropdown-item" href="#">agenda odontologo</a>-->
+                     <a class="dropdown-item" href="{% url 'Muelitas:info'%}">informacion odontologo</a>
+                  </div>
+                </li>
+              </ul>
+              {% elif request.session.logueado.3 == "3" %}
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Citas
+                  </a>
+                  <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                    <a class="dropdown-item" href="{% url 'calendario:calendar'%}">Consultar citas</a>
+                    <a class="dropdown-item" href="#">Registrar asistencia</a>
+                    <a class="dropdown-item" href="{% url 'cita:listarMultas'%}">Consultar multas</a>
+                    <a class="dropdown-item" href="{% url 'Muelitas:reportepdf'%}">Consultar historial</a>
+                   <!-- <a class="dropdown-item" href="#">Cancelar citas</a>-->
+                  </div>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">especialistas
+                  </a>
+                  <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                    <!--<a class="dropdown-item" href="#">agenda odontologo</a>-->
+                     <a class="dropdown-item" href="{% url 'Muelitas:info'%}">informacion odontologo</a>
+                  </div>
+                </li>
+              </ul>
+              {% endif %}
+              <ul class="navbar-nav ml-auto nav-flex-icons">
+                <!--<li><i class="fas fa-user-cog"></i></li-->
+                <li class="nav-item dropdown"> 
+                   
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Configuracion 
+                  </a></i>
+                  <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                    <a class="dropdown-item" href="{% url 'Muelitas:Perfil' %}">Perfil :{{ q.rol }}</a>
+                    {% if request.session.logueado != True %}
+                    <p><a class="dropdown-item"  href="{% url 'Muelitas:logout' %}">cerrar sesion</a></p>                 
+                    {% endif %}                  
+                    <a class="dropdown-item" href="#">Ayuda</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div id="ventana_modal" class="modal fade" role="dialog"></div>
+
+
+ 
+
+  {% block contenedor %}
+
+
+  {% endblock%}
+
+  
+
+ <!--footer-->
+  <footer>
+    <div class="mt-5 text-center bg-dark text-light">
+      <form class="bg-dark">
+        <div class="container">
+          <div class="row ">
+            <div class="col-md-12 mt-3 ">
+              <p class="text-center text-light">© Copyright 2018&nbsp; - All rights reserved. </p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/libreria.js' %}"> </script>
+  <script src="{% static 'js/iconFontAwesome.js' %}"> </script>
+  <script src="{% static 'js/jquery.bootstrap.modal.forms.min.js' %}"></script>
+ 
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+.logo {
+    line-height: 60px;
+    position: fixed;
+    float: left;
+    margin: 16px 46px;
+    color: #093EA7;
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.navb {
+    position: fixed;
+    width: 100%;
+    line-height: 60px;
+}
+
+.navb .u-l {
+    line-height: 60px;
+    list-style: none;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    color: #fff;
+    padding: 0;
+    text-align: right;
+    margin: 0;
+    padding-right: 40px;
+    transition: 1s;
+}
+
+.navb.black .u-l {
+    background: #000;
+}
+
+.navb .u-l>li {
+    display: inline-block;
+    padding: 16px 40px;;
+}
+
+.navb .u-l>li>a {
+    color: #fff;
+    font-size: 16px;
+}
+
+
+@media(max-width: 786px) {
+
+    .logo {
+          position: fixed;
+          top: 0;
+          margin-top: 16px;
+    }
+
+    .navb .u-l {
+          max-height: 0px;
+          background: #000;
+    }
+
+    .navb.black .u-l {
+          background: #000;
+    }
+
+    .showing {
+          max-height: 34em;
+    }
+
+    .navb .u-l>li {
+          box-sizing: border-box;
+          width: 100%;
+          padding: 24px;
+          text-align: center;
+    }
+
+
+}
+
+
+
+
+/*formulario*/
+.back-ground{
+    background-image: url(../img/odontologia/12222.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+.cont-block{
+    background:#D3D4D6; 
+    border-radius: 10px; 
+    width: 40%; 
+    height: 40%;
+    padding: 20px 10px 20px 10px;
+   
+}
+
+.login-sec{
+    padding: 50px 30px; 
+    position:relative;
+}
+    
+.login-sec .login-h2{
+    margin-bottom:30px; 
+    font-weight:800; 
+    font-size:30px; 
+    color: #0069c0;
+}
+
+.login-sec h2:after{ 
+    content:" "; 
+    width:100px; 
+    height:5px; 
+    background:#6ec6ff; 
+    display:block; 
+    margin-top:20px; 
+    border-radius:3px; 
+    margin-left:auto;
+    margin-right:auto
+}
+
+.btn-login{
+    background: #0069c0; 
+    color:#fff; 
+    font-weight:500; 
+      
+}
+
+.btn-center{
+   
+    display: flex;
+    justify-content: center;
+}
+
+
+/*menu vertical*/
+.details li {
+    list-style: none;
+  }
+.li-profile{
+    margin-bottom:10px;
+      
+}
+
+.imgRedonda {
+    width:300px;
+    height:300px;
+    border-radius:150px;
+    border:10px solid #666;
+}

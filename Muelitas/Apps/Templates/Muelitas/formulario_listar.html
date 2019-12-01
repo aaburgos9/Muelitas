@@ -1,0 +1,48 @@
+{% extends 'Muelitas/basePrincipal.html' %}
+
+{% block titulo %}Listado de Usuarios{% endblock %}
+
+{% block contenedor %}
+
+<br> <br> <br> <br>
+<div class="container my-5">
+
+    <h1 style="text-align:center">Usuarios</h1>
+    <div class="table-responsive"></div>
+    <table class="table ">
+        <tr>
+            <th>Documento</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>rol</th>
+            <th>Accion</th>
+        </tr>
+        <tbody>
+
+            {% for registro in Usuario %}
+            <tr>
+                <td>{{ registro.Documento }}</td>
+                <td>{{ registro.Nombre }}</td>
+                <td>{{ registro.Correo }}</td>
+                <td>{{ registro.get_rol_display }}</td>
+
+
+                <td>
+                    <button type="button" class="btn btn-primary"
+                        onclick="verRegistro('{% url 'Muelitas:verRegistro' registro.id %}')">Ver</button>
+
+                    <a onclick=" return abrir_modal('{% url 'Muelitas:editarRegistro' registro.id %}')" class="btn btn-warning">Editar</a>
+
+                    <!--<a onclick=" return abrir_modal('{% url 'Muelitas:eliminarRegistro' registro.id %}')" class="btn btn-danger">Eliminar</a>-->
+                </td>
+            </tr>
+
+            {%endfor%}
+
+
+        </tbody>
+    </table>
+</div>
+</div>
+
+{% endblock %}

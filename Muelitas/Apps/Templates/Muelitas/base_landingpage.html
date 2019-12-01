@@ -1,0 +1,130 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- PAGE settings -->
+  <title> As dental </title>
+  <meta name="description">
+  <!-- CSS dependencies -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+
+<body>
+  <!--Navbar -->
+
+  <header>
+    <nav class="fixed-top navbar-expand-lg navb">
+
+      <div class="logo">
+        <a href="{% url 'Muelitas:inicio' %}">As dental</a>
+      </div>
+      <div class="menu">
+        <ul class="u-l">
+
+          <li><a href="{% url 'Muelitas:nosotros'%}">Nosotros</a></li>
+          <li><a href="{% url 'Muelitas:Servicios'%}">Servicios</a></li>
+          <li><a href="#re-cita">reserva tu cita</a></li>
+          <li class="nav-item ">
+            <a class="nav-link waves-effect waves-light" href="{% url 'Muelitas:formularioRegistro' 'false' %}">
+            registrarse
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'Muelitas:formularioLogin' 'false' %}">
+              login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+ 
+              
+ 
+
+  {% block contenedor %}
+
+
+  {% endblock%}
+
+  <!--footer-->
+
+  <footer>
+    <div class="text-center bg-dark pt-5 text-light">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="mr-3" src="{% static 'img/logos/agenda.png' %}" alt="generic placeholder image"
+              width="70" height="70">
+            <hr />
+            <h4 class="text-center">contactos</h4>
+            <a href="tel:+246 - 542 550 5462 " class="text-light">+57 - 322 550 5462</a>
+            <p>citas<a href="mailto:"></a>@Asdental.com</p>
+          </div>
+
+
+          <div class="col-lg-4">
+            <img class="mr-3" src="{% static 'img/logos/horarios.png' %}" alt="generic placeholder image"
+              width="50" height="50">
+            <hr />
+            <div class="media-body">
+              <h4 class="text-center">Horario de atencion</h4>
+              <p>08:00 - 12:00 &amp; 13:00 - 19:00<br>lunes / viernes&nbsp;<br>08:00 - 11:00 &amp; 13:00 -
+                16:00&nbsp;<br>fines de semanas&nbsp;</p>
+            </div>
+            <br>
+            <br>
+            <div>
+              <img src="{% static 'img/logos/whatsapp.png' %}" width="50" height="50">
+              <img src="{% static 'img/logos/twitter.png' %}" width="50" height="50">
+              <img src="{% static 'img/logos/instagram.png' %}" width="40" height="40">
+              <img src="{% static 'img/logos/facebook.png' %}" width="50" height="50">
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <img class="mr-3" src="{% static 'img/logos/ubicacion.png' %}" alt="generic placeholder image"
+              width="50" height="50">
+            <hr />
+            <div class="media-body">
+              <h4 class="text-center">Ubicacion</h4>
+            </div>
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7933.3123629185575!2d-75.59585061463152!3d6.17675998628388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46824e0bb0bc81%3A0xdff8f93dead8aac7!2s%C3%89xito+Envigado+Centro!5e0!3m2!1ses-419!2sco!4v1557429482733!5m2!1ses-419!2sco"
+              width="200" height="200" style="border:0" allowfullscreen></iframe>
+          </div>
+
+        </div>
+        <div class="text-center bg-dark text-light">
+          <form class="bg-dark">
+            <div class="container">
+              <div class="row ">
+                <div class="col-md-12 mt-3 ">
+                  <p class="text-center text-light">© Copyright 2018&nbsp; - All rights reserved. </p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+
+  <script src="{% static 'js/libreria.js' %}"> </script>
+  <script src="{% static 'js/iconFontAwesome.js' %}"> </script>
+  <script src="{% static 'js/jquery.bootstrap.modal.forms.min.js' %}"></script>
+
+</body>
+
+</html>

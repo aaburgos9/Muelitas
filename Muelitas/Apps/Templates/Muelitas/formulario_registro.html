@@ -1,0 +1,64 @@
+{% extends 'Muelitas/base_landingpage.html' %}
+
+{% load staticfiles %}
+
+{% block contenedor %}
+
+
+
+
+
+<div class="back-ground">
+ <div >
+     <br> <br> <br> <br> <br> <br> <br>
+    <div class="container cont-block "> 
+            {% if '1062' in msn %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>El usuario ya existe!</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            {% endif %}  
+            <div class="row ">      
+            <div class="col-lg-12 login-sec">     
+                <h2 class="text-center login-h2">As dental</h2>
+                <form class="login-form" action="{% url 'Muelitas:usuarioGuardar' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label>Documento</label>
+                        <input type="number" id="documento" class="form-control" name="Documento"
+                            placeholder="documento identidad" required >
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" class="form-control" name="Nombre"
+                        placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label>contraseña</label>
+                        <input type="password" class="form-control" name="Password"
+                        placeholder="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo Electronico</label>
+                        <input type="email"  class="form-control" name="Correo"
+                        placeholder="email" required>
+                    </div>                
+                   
+            </div>
+            <div class="col-md-12 btn-center">
+                <button type="submit" class="btn btn-lg btn-login">registrar</button>
+            </div>
+            
+
+            </form>
+
+        </div>
+    </div>
+    <br> <br> <br> <br> <br>
+</div>
+
+</div>
+
+{% endblock %}
